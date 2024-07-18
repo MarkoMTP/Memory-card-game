@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/card.css"
   
- export default function Card({id}) {
+ export default function Card({id, onClick}) {
     
 
     const [data, setData] = useState();
@@ -29,15 +29,16 @@ import "../styles/card.css"
     }, [id]);
 
 
-
     return (
-      <div>
-        {data ? (
-          <img src={data.sprites.back_default} alt={data.name} />
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-    );
-  }
-  
+        <div className="Card" onClick={onClick}>
+          {data ? (
+            <>
+              <img src={data.sprites.back_default} alt={data.name} />
+              <p>{data.name}</p>
+            </>
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+      );
+    }

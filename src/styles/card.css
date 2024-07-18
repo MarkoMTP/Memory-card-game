@@ -1,0 +1,21 @@
+.Card {
+  width: 20rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+img {
+  background-color: brown;
+  width: 70%;
+  border: 1px black solid;
+}
+
+.Card p {
+  font-size: 2rem;
+  background-color: antiquewhite;
+  padding: 0.7rem;
+}

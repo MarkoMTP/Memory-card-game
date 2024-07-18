@@ -12,33 +12,37 @@ const randomFunc = () => {
     const randomNum = Math.floor(Math.random() * 11);
     if (!newIds.includes(randomNum)) {
       newIds.push(randomNum);
-    }
+    } else continue
   }
   setId(newIds);
+  console.log(ids)
+
 };
+  
+
 
 useEffect(() => {
   randomFunc();
 }, []);
 
 
-  return (
+  return (  
+    <>
+    <div className='Heading'>
+    <h1>Memory Card Game</h1>
+    <p>Score:{ids[4]}</p>
+    <p>Best Score:</p>
+
+    </div>
     <div className='container'>
 
-      <Card id={ids[0]} >2</Card>
-      <Card id={ids[1]} >2</Card>
-      <Card id={ids[2]} >2</Card>
-      <Card id={ids[3]} >2</Card>
-      <Card id={ids[4]} >2</Card>
-      <Card id={ids[5]} >2</Card>
-      <Card id={ids[6]} >2</Card>
-      <Card id={ids[7]} >2</Card>
-      <Card id={ids[8]} >2</Card>
-      <Card id={ids[9]} >2</Card>
-
+{ids.map((id, index) => (
+  <Card key={index} id={id} onClick={randomFunc}></Card>
+))}
      
 
     </div>
+    </>
   )
 }
 
