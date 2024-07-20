@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "../styles/card.css"
   
  export default function Card({id, onClick}) {
-    
     const [data, setData] = useState();
     
   
